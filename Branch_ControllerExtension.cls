@@ -1,5 +1,8 @@
 public class Branch_ControllerExtension 
 {    
+    
+    private string caseid;
+
     private final Case caseRecord;
     private ApexPages.StandardController stdcontroller;
     
