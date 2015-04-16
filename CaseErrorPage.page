@@ -1,0 +1,21 @@
+<apex:page tabstyle="Case" showHeader="{!titleForErrorPage!='Web Service Error'}" controller="CaseErrorPageController" >
+<apex:image url="{!$Resource.SunTrustLogo}" width="100" rendered="{!titleForErrorPage='Web Service Error'}"  />
+  <apex:form >
+      <br />
+      <!-- Start changes for CMI Pilot -->
+      <apex:pageBlock title="{!titleForErrorPage}" mode="edit">
+      <!-- <apex:pageBlock title="Create New Case Process Failed" mode="edit"> -->
+      <!-- End changes for CMI Pilot -->
+          <apex:pageBlockButtons >
+              <apex:commandButton action="{!returnPage}" rendered="{!titleForErrorPage!='Web Service Error'}" value="Return to Initiating Case" />
+              <apex:commandButton action="{!returnPage}" rendered="{!NavigatedFrom='AccountDetailPage'}" value="Return to Initiating Account" /><!--CMI 2014 changes-->
+          </apex:pageBlockButtons>
+      
+          <apex:pageBlockSection >          
+              <apex:outputLabel value="Error details: " />
+              <br/>
+              <apex:outputLabel value="{!errorMsg}" />
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

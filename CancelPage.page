@@ -1,0 +1,29 @@
+<apex:page id="cancelPage" showHeader="false" controller="ThankYouController" title="Cancel">
+    <apex:form >
+    <div style="width:710px;background-color:white;" >    
+        <apex:pageBlock title="Client First Solutions" rendered="{!NOT(isTeammateFeedback)}" mode="edit">
+            <apex:pageBlockButtons location="both">
+                <apex:commandbutton action="{!okbutton}" value="OK" style="margin-left:27%;" />
+            </apex:pageBlockButtons>
+            <div style="margin:80px 80px 40px 80px;font-style:bold;text-align:center;color:red;font-size:24px;" >
+                Your current transaction has been cancelled.
+            </div>
+            <div style="margin:0px 80px 80px 80px;font-style:bold;text-align:center;color:navy;font-size:18px;">
+                Click the OK button to continue.
+            </div>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Teammate Feedback" rendered="{!isTeammateFeedback}" mode="edit">
+            <apex:pageBlockButtons location="both">
+                <apex:commandbutton action="{!okbutton}" value="OK" style="margin-left:27%;" />
+            </apex:pageBlockButtons>
+            <div style="margin:80px 80px 40px 80px;font-style:bold;text-align:center;color:red;font-size:24px;" >
+                Your current feedback has been cancelled.
+            </div>
+            <div style="margin:0px 80px 80px 80px;font-style:bold;text-align:center;color:navy;font-size:18px;">
+                Click the OK button to continue.
+            </div>
+        </apex:pageBlock>
+    </div>     
+    </apex:form>
+</apex:page>
